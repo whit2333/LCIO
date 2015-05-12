@@ -63,13 +63,13 @@ namespace SIO{
     SIO_DATA( stream , &(cluster->_shape[0])  ,nShape ) ;
     
     
-    if( _vers > SIO_VERSION_ENCODE(1,2) ) {
+    //    if( _vers > SIO_VERSION_ENCODE(1,2) ) {
       
       
       // read PIDs
       int nPid ;
       SIO_DATA( stream ,  &nPid  , 1 ) ;
-      for(int i=0;i<nPid;i++){
+      /*      for(int i=0;i<nPid;i++){
 	// create new Pid objects
 	ParticleIDIOImpl* pid = new ParticleIDIOImpl ;
 	
@@ -97,6 +97,7 @@ namespace SIO{
 //     cluster->setMuonWeight( pType[2] ) ;
     
     }
+      */
 
 
     
@@ -180,8 +181,9 @@ namespace SIO{
 //     }
 
     // write Pids
-    int nPid  = cluster->getParticleIDs().size() ;
+    int nPid = 0;// = cluster->getParticleIDs().size() ;
     SIO_DATA( stream ,  &nPid  , 1 ) ;
+    /*
     for(int i=0;i<nPid;i++){
       const ParticleID* pid = cluster->getParticleIDs()[i]  ;
       LCSIO_WRITE( stream, pid->getLikelihood()  ) ;
@@ -194,7 +196,7 @@ namespace SIO{
 	LCSIO_WRITE( stream, pid->getParameters()[j]  ) ;
       }
     }
-    
+    */
     const ClusterVec& clusters = cluster->getClusters() ;
     int nClusters =  clusters.size() ;
 
