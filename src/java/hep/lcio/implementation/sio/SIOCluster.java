@@ -54,10 +54,10 @@ class SIOCluster extends ICluster
          shape[i] = in.readFloat();
       }
       
-      if( 1000*major+minor > 1002)
-      {
+      //      if( 1000*major+minor > 1002)
+      //      {
          int nPid = in.readInt() ;
-         this.particleIDs = new ArrayList(nPid);
+	 /*         this.particleIDs = new ArrayList(nPid);
          for (int i=0; i<nPid; i++)
          {
             ParticleID id = new SIOParticleID(in,owner,flag,major,minor);
@@ -72,6 +72,7 @@ class SIOCluster extends ICluster
          particleType[1] = in.readFloat();
          particleType[2] = in.readFloat();
       }
+	 */
          
       int nClust = in.readInt();
       tempClusters = new ArrayList(nClust);
@@ -121,13 +122,14 @@ class SIOCluster extends ICluster
          
          out.writeFloatArray(cluster.getShape()) ;
          
-         List pids = cluster.getParticleIDs() ;
-         out.writeInt( pids.size());
-         for (Iterator iter = pids.iterator(); iter.hasNext();)
+	 //         List pids = cluster.getParticleIDs() ;
+         out.writeInt(0);// pids.size());
+	 /*         for (Iterator iter = pids.iterator(); iter.hasNext();)
          {
             ParticleID pid = (ParticleID) iter.next();
             SIOParticleID.write(pid,out);
          }
+	 */
             
          List clusters = cluster.getClusters();
          out.writeInt(clusters.size());
