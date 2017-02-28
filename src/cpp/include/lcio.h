@@ -10,6 +10,7 @@
  * @version $Id: lcio.h,v 1.37 2010-06-29 09:57:11 engels Exp $ 
  * @see LCEvent
  */
+#include "Exceptions.h"
 #include "EVENT/LCIO.h"
 #include "IOIMPL/LCFactory.h"
 #include "IMPL/LCIOExceptionHandler.h"

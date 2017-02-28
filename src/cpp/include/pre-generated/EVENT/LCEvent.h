@@ -10,11 +10,16 @@
 #include <string>
 #include <vector>
 
-#include "EVENT/LCParameters.h"
 #include "Exceptions.h"
+#include "EVENT/LCParameters.h"
 #include "LCIOTypes.h"
 
 namespace EVENT {
+
+// Don't know why but this is needed...
+// Really need to fix LCIO's asinine namespacing
+class DataNotAvailableException;
+class EventException;
 
 class LCCollection;
 

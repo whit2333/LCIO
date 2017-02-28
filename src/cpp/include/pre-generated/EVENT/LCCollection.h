@@ -9,10 +9,14 @@
 
 #include <string>
 
-#include "EVENT/LCParameters.h"
 #include "Exceptions.h"
+#include "EVENT/LCParameters.h"
 
 namespace EVENT {
+
+  // Don't know why but this is needed...
+  // Really need to fix LCIO's asinine namespacing
+  class ReadOnlyException;
 
 class LCObject;
 
@@ -27,6 +31,7 @@ class LCObject;
                                                     
      
 class LCCollection {
+
 
 public: 
     /// Destructor.
